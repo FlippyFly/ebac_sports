@@ -86,3 +86,20 @@ export const BtnComprar = styled.button`
     );
   }
 `
+
+export const BtnFavorito = styled.button`
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-top: 8px;
+  background-color: #e74c3c; /* vermelho */
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #c0392b;
+  }
+`
