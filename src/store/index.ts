@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 
 import carrinhoReducer from './reducer/carrinho'
 
-import { api } from '../services/api'
+import api from '../services/api'
 
 export const store = configureStore({
   reducer: {
@@ -14,4 +14,3 @@ export const store = configureStore({
 })
 
 export type RootReducer = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
