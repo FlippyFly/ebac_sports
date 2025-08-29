@@ -1,104 +1,50 @@
 import styled from 'styled-components'
 
-import { cores } from '../../styles'
-
-export const Produto = styled.div``
-
-export const Titulo = styled.h3`
-  min-height: 64px;
+export const Produto = styled.div`
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
 `
 
 export const Capa = styled.div`
-  position: relative;
-
   img {
-    display: block;
-    width: 100%;
-    margin-bottom: 8px;
+    max-width: 100%;
+    border-radius: 8px;
   }
+`
+
+export const Titulo = styled.h3`
+  margin: 8px 0;
+  font-size: 18px;
 `
 
 export const Prices = styled.div`
-  margin: 16px 0;
-  color: #fff;
-
-  small {
-    font-size: 16px;
-    text-decoration: line-through;
-    margin-right: 8px;
-    opacity: 0.7;
-  }
-
-  strong {
-    font-size: 18px;
-  }
-`
-
-export const Tag = styled.span`
-  background-color: ${cores.corPrincipal};
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  padding: 8px;
-  font-size: 12px;
-  font-weight: 700;
-  color: #fff;
-`
-export const Plataformas = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  margin: 8px 0 0;
-
-  li {
-    background-color: ${cores.corPrincipal};
-    padding: 8px;
-    font-size: 10px;
-    white-space: nowrap;
-    margin-right: 8px;
-    margin-bottom: 8px;
-    color: #fff;
-    font-weight: bold;
-  }
-`
-export const BtnComprar = styled.button`
-  display: block;
-  width: 100%;
-  background-image: linear-gradient(
-    45deg,
-    ${cores.corPrincipal},
-    ${cores.corSecundaria}
-  );
-  font-weight: bold;
+  margin-bottom: 12px;
   font-size: 16px;
-  padding: 12px 0;
-  text-transform: capitalize;
-  color: #eee;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-  margin-bottom: 8px;
-
-  &:hover {
-    background-image: linear-gradient(
-      -45deg,
-      ${cores.corPrincipal},
-      ${cores.corSecundaria}
-    );
-  }
 `
 
-export const BtnFavorito = styled.button`
+const BaseButton = styled.button`
   display: block;
   width: 100%;
   padding: 8px;
   margin-top: 8px;
-  background-color: #e74c3c; /* vermelho */
-  color: white;
+  color: #fff;
   font-weight: bold;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+`
 
+export const BtnComprar = styled(BaseButton)`
+  background-color: #2ecc71;
+  &:hover {
+    background-color: #27ae60;
+  }
+`
+
+export const BtnFavorito = styled(BaseButton)`
+  background-color: #e74c3c;
   &:hover {
     background-color: #c0392b;
   }

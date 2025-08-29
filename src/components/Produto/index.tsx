@@ -1,22 +1,23 @@
-import { Produto as ProdutoType } from '../../App'
+import { Produto as ProdutoType } from '../../types/Produto'
 import * as S from './styles'
 
 type Props = {
   produto: ProdutoType
   aoComprar: (produto: ProdutoType) => void
-  aoFavoritar: (produto: ProdutoType) => void
+  favoritar: (produto: ProdutoType) => void
   estaNosFavoritos: boolean
 }
 
 export const paraReal = (valor: number) =>
-  new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(
-    valor
-  )
+  new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  }).format(valor)
 
 const ProdutoComponent = ({
   produto,
   aoComprar,
-  aoFavoritar,
+  favoritar,
   estaNosFavoritos
 }: Props) => {
   return (
@@ -28,7 +29,7 @@ const ProdutoComponent = ({
       <S.Prices>
         <strong>{paraReal(produto.preco)}</strong>
       </S.Prices>
-      <S.BtnFavorito onClick={() => aoFavoritar(produto)} type="button">
+      <S.BtnFavorito onClick={() => favoritar(produto)} type="button">
         {estaNosFavoritos
           ? '- Remover dos favoritos'
           : '+ Adicionar aos favoritos'}

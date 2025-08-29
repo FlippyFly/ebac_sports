@@ -1,9 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { Produto } from '../types/Produto'
 
-import { Produto } from '../App'
-
-const api = createApi({
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:4000' }),
+export const api = createApi({
+  reducerPath: 'api', // mesmo usado no store
+  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/' }),
   endpoints: (builder) => ({
     getProdutos: builder.query<Produto[], void>({
       query: () => 'produtos'
@@ -12,5 +12,3 @@ const api = createApi({
 })
 
 export const { useGetProdutosQuery } = api
-
-export default api
